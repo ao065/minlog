@@ -1,0 +1,38 @@
+@layer base {
+  html {
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    min-block-size: 100dvb;
+
+    font-family:
+      "Helvetica Neue", arial, "Noto Sans JP", "Hiragino Kaku Gothic ProN",
+      "Hiragino Sans", "BIZ UDPGothic", meiryo, sans-serif;
+    line-height: 1.5;
+    text-autospace: normal;
+    text-spacing-trim: trim-start;
+    text-size-adjust: 100%;
+    line-break: strict;
+    overflow-wrap: anywhere;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  pre {
+    text-autospace: no-autospace;
+    text-spacing-trim: space-all;
+  }
+
+  time {
+    text-autospace: no-autospace;
+  }
+
+  img,
+  picture,
+  svg {
+    display: block;
+    block-size: auto;
+  }
+}
