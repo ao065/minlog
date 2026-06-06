@@ -10,9 +10,11 @@ export default {
   plugins: [
     "stylelint-declaration-block-no-ignored-properties",
     "stylelint-use-nesting",
+    "stylelint-plugin-defensive-css",
   ],
   rules: {
     "plugin/declaration-block-no-ignored-properties": true,
     "csstools/use-nesting": "always",
+    "defensive-css/require-at-layer": false,
   },
 };
