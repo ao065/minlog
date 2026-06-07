@@ -15,6 +15,6 @@ export default {
   rules: {
     "plugin/declaration-block-no-ignored-properties": true,
     "csstools/use-nesting": "always",
-    "defensive-css/require-at-layer": false,
+    "defensive-css/require-at-layer": null,
   },
 };
