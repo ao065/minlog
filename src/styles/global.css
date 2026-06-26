@@ -1,0 +1,5 @@
+:root {
+  --content-width: 37.5rem; /* 600px */
+  --text-primary: oklch(18% 0.0229 264.18deg);
+  --text-secondary: oklch(45.23% 0.0352 264.13deg);
+}

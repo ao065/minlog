@@ -1,18 +1,32 @@
 ---
 import "kiso.css";
+import "../styles/global.css";
+import { SITE_NAME } from "../consts";
+
+const { title = SITE_NAME, description = "最小限のログ" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <meta name="description" content={description} />
+    <title>{title}</title>
   </head>
   <body class="body">
     <slot />
   </body>
 </html>
+
+<style>
+  .body {
+    font-family:
+      "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+      "Noto Sans JP", sans-serif;
+    background-color: #eceff4;
+  }
+</style>
