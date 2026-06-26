@@ -16,5 +16,6 @@ export default {
     "plugin/declaration-block-no-ignored-properties": true,
     "csstools/use-nesting": "always",
     "defensive-css/require-at-layer": null,
+    "defensive-css/require-custom-property-fallback": null,
   },
 };
