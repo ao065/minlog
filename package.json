@@ -16,7 +16,7 @@
     "fmt:fix": "prettier --write ."
   },
   "dependencies": {
-    "astro": "^6.4.8",
+    "astro": "^7.0.3",
     "astro-expressive-code": "^0.44.0",
     "kiso.css": "^1.2.4",
     "sharp": "^0.34.5"
