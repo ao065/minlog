@@ -1,11 +1,29 @@
 ---
 import { SITE_NAME } from "../consts";
+
+interface Props {
+  isH1?: boolean;
+}
+
+const { isH1 = false } = Astro.props;
 ---
 
 <header class="header">
-  <h1 class="heading">
-    <a href="/" class="link">{SITE_NAME}</a>
-  </h1>
+  {
+    isH1 ? (
+      <h1 class="site-title">
+        <a href="/" class="link">
+          {SITE_NAME}
+        </a>
+      </h1>
+    ) : (
+      <div class="site-title">
+        <a href="/" class="link">
+          {SITE_NAME}
+        </a>
+      </div>
+    )
+  }
 </header>
 
 <style>
@@ -19,7 +37,8 @@ import { SITE_NAME } from "../consts";
     padding-inline: 1rem;
   }
 
-  .heading {
+  .site-title {
+    margin: 0;
     font-size: 1.5rem;
     font-weight: 700;
   }
