@@ -3,52 +3,22 @@ import ArticleItem from "../components/ArticleItem.astro";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { getCollection } from "astro:content";
 
-interface Post {
-  title: string;
-  pubDate: Date;
-  link: string;
-}
-const posts: Post[] = [
-  {
-    title: "Astroでブログを作った",
-    pubDate: new Date("2026-06-18"),
-    link: "/blog/astro-blog-setup",
-  },
-  {
-    title: "Tailwind CSSで知っておくと便利なテクニック5選",
-    pubDate: new Date("2026-05-30"),
-    link: "/blog/tailwind-tips",
-  },
-  {
-    title: "TypeScriptのジェネリクスを図解で理解する",
-    pubDate: new Date("2026-05-12"),
-    link: "/blog/typescript-generics",
-  },
-  {
-    title: "useEffectでやりがちな3つのミスと対策",
-    pubDate: new Date("2026-04-27"),
-    link: "/blog/react-useeffect-pitfalls",
-  },
-  {
-    title: "git rebaseとmergeの使い分けを整理した",
-    pubDate: new Date("2026-04-03"),
-    link: "/blog/git-rebase-vs-merge",
-  },
-];
+const posts = await getCollection("blog");
 ---
 
 <Layout>
-  <Header />
+  <Header isH1={true} />
   <main>
     <div class="articles">
       <h2 class="heading">Articles</h2>
       {
         posts.map((post) => (
           <ArticleItem
-            title={post.title}
-            pubDate={post.pubDate}
-            link={post.link}
+            title={post.data.title}
+            pubDate={post.data.pubDate}
+            link={`blog/${post.id}`}
           />
         ))
       }
