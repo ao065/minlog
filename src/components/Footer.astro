@@ -1,0 +1,35 @@
+---
+import { SITE_NAME } from "../consts";
+import Social from "./Social.astro";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <ul class="list">
+    <li><Social platform="Github" username="ao065" /></li>
+  </ul>
+  <small class="copyright">&copy; {currentYear} {SITE_NAME}</small>
+</footer>
+
+<style>
+  .footer {
+    max-inline-size: var(--content-width);
+    margin-block-start: 3rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+
+  .copyright {
+    display: block;
+    margin-block-start: 2rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+</style>

@@ -1,0 +1,43 @@
+---
+const { title, pubDate, link } = Astro.props;
+const datetime = pubDate.toISOString().slice(0, 10);
+const display = pubDate.toLocaleDateString("ja-JP");
+---
+
+<article class="article">
+  <a href={link} class="link">
+    <h3 class="heading">{title}</h3>
+  </a>
+  <time datetime={datetime} class="time">{display}</time>
+</article>
+
+<style>
+  .article {
+    display: grid;
+    grid-template:
+      "time"
+      "title";
+  }
+
+  .heading {
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--text-primary);
+  }
+
+  .link {
+    grid-area: title;
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .time {
+    grid-area: time;
+    font-size: 0.875rem;
+    color: oklch(48% 0.0352 264.13deg);
+  }
+</style>

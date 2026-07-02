@@ -1,23 +1,47 @@
+---
+import "kiso.css";
+import "../styles/global.css";
+import { SITE_NAME } from "../consts";
+
+const { title = SITE_NAME, description = "最小限のログ" } = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="icon"
+      href="/favicon-light.svg"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      href="/favicon-dark.svg"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon.ico" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon-light.png"
+    />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body class="body">
+    <slot />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  .body {
+    font-family:
+      "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+      "Noto Sans JP", sans-serif;
+    background-color: #eceff4;
+  }
 </style>

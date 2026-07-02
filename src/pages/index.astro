@@ -1,11 +1,46 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import ArticleItem from "../components/ArticleItem.astro";
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { getCollection } from "astro:content";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const posts = await getCollection("blog");
 ---
 
 <Layout>
-	<Welcome />
+  <Header isH1={true} />
+  <main>
+    <div class="articles">
+      <h2 class="heading">Articles</h2>
+      {
+        posts.map((post) => (
+          <ArticleItem
+            title={post.data.title}
+            pubDate={post.data.pubDate}
+            link={`blog/${post.id}`}
+          />
+        ))
+      }
+    </div>
+  </main>
+  <Footer />
 </Layout>
+
+<style>
+  .articles {
+    display: grid;
+    gap: 1rem;
+
+    max-inline-size: var(--content-width);
+    margin-block-start: 2rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+
+  .heading {
+    border-block-end: 1px solid var(--text-secondary);
+    font-size: 1rem;
+    font-weight: 700;
+  }
+</style>
