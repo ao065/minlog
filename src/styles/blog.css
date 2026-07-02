@@ -1,0 +1,111 @@
+.prose h2 {
+  margin-block: 1.25rem;
+  border-block-end: 1px solid var(--text-secondary);
+
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.prose h3 {
+  margin-block: 1.25rem;
+  border-block-end: 1px solid var(--text-secondary);
+
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.prose p {
+  padding-block: 0.5rem;
+  color: var(--text-primary);
+}
+
+.prose a {
+  color: var(--text-primary);
+  text-decoration: underline;
+}
+
+@media (hover: hover) {
+  .prose a:hover {
+    opacity: 0.7;
+  }
+}
+
+.prose code {
+  --code-bg-color: oklch(89.93% 0.0164 262.75deg);
+
+  padding: 0.15rem 0.4rem;
+  border: 0.0625rem solid var(--text-secondary);
+  border-radius: 0.25rem;
+
+  font-size: 0.875em;
+
+  background-color: var(--code-bg-color);
+}
+
+.prose table {
+  inline-size: 100%;
+  margin-block: 1rem;
+}
+
+.prose thead {
+  border-block-end: 1px solid var(--text-secondary);
+  color: var(--text-primary);
+}
+
+.prose th,
+.prose td {
+  --table-border-color: oklch(76.99% 0 0deg);
+
+  padding-block: 0.5rem;
+  border-block-end: 1px solid var(--table-border-color);
+}
+
+.prose strong {
+  font-weight: 500;
+}
+
+.prose ul {
+  list-style-type: disc;
+}
+
+.prose ol {
+  list-style-type: decimal;
+}
+
+.prose ul,
+.prose ol {
+  margin-block-end: 1.5rem;
+  padding-inline-start: 1rem;
+}
+
+.prose blockquote {
+  --blockquote-border-color: oklch(76.99% 0 0deg);
+
+  margin-block: 2rem;
+  margin-inline-start: 1rem;
+  padding-inline-start: 1rem;
+  border-inline-start: 1.5px solid var(--blockquote-border-color);
+}
+
+.prose hr {
+  margin-block: 2.5rem;
+  border: none;
+  border-block-start: 1px solid var(--text-secondary);
+}
+
+.prose .expressive-code {
+  margin-block: 0.5rem;
+}
+
+.prose .task-list-item {
+  list-style: "";
+}
+
+.prose pre,
+.prose code {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
+}
